@@ -1,0 +1,70 @@
+body {
+    background-color: #fff;
+    font-family: Montserrat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Организация по вертикали для создания строк (rows) */
+    gap: 25px;
+    padding: 25px;
+	    margin: 0 auto; /* Центрирование */
+
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    width: 100%; /* Ширина строки */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Расстояние между элементами внутри колонки */
+}
+
+/* Стиль для одной колонки, заполняющей всю строку */
+.row.single .column {
+    flex: 1 1 100%; /* Колонка занимает всю строку */
+	
+}
+
+/* profile-img - стиль для фото */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Section - каждый отдельный модуль, отделённый границей для передачи каждой отдельной идеи */
+
+.section-wrapper {
+    position: relative;
+}
+
+.section-title {
+    position: absolute;
+    top: 0px; /* Поднимем текст над верхней границей .column */
+    left: 50%; /* Смещение от левого края */
+	transform: translateX(-50%); /* Сдвиг для точного центрирования */
+    background-color: #fff;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    z-index: 1; /* Убедимся, что заголовок находится поверх границы */
+}
+
+.section{
+	text-align: center;
+    flex: 1;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+	border: 3px solid #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Четкая тень без размытия */
+    position: relative;
+    padding-top: 40px; /* Смещение для заголовка *
+}
