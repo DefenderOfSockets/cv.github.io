@@ -1,33 +1,44 @@
 body {
     background-color: #fff;
-    font-family: Montserrat;
+    font-family: Verdana;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     display: flex;
     flex-direction: column; /* Организация по вертикали для создания строк (rows) */
     gap: 25px;
-    padding: 25px;
-	    margin: 0 auto; /* Центрирование */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
 
 }
 
 .row {
     display: flex;
     gap: 10px;
+    height: 100vh;
     width: 100%; /* Ширина строки */
 }
 
-.column {
+.column.large {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Расстояние между элементами внутри колонки */
+    height: 100vh;
+    flex:1;
+    min-width: 250px;
+    gap: 20px; /* Расстояние между элементами внутри колонки */
 }
-
-/* Стиль для одной колонки, заполняющей всю строку */
-.row.single .column {
-    flex: 1 1 100%; /* Колонка занимает всю строку */
-	
+.column.small {
+    flex: 1; /* Узкая колонка */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 400px;
+    gap: 20px; /* Расстояние между элементами внутри колонки */
 }
 
 /* profile-img - стиль для фото */
@@ -36,6 +47,8 @@ body {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Section - каждый отдельный модуль, отделённый границей для передачи каждой отдельной идеи */
@@ -46,7 +59,7 @@ body {
 
 .section-title {
     position: absolute;
-    top: -15px; /* Поднимем текст над верхней границей .column */
+    top: -17.5px; /* Поднимем текст над верхней границей .column */
     left: 50%; /* Смещение от левого края */
 	transform: translateX(-50%); /* Сдвиг для точного центрирования */
     background-color: #fff;
@@ -57,14 +70,29 @@ body {
     z-index: 1; /* Убедимся, что заголовок находится поверх границы */
 }
 
-.section{
-	text-align: center;
+.section {
     flex: 1;
+    min-height: 0;
     padding: 15px;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
 	border: 3px solid #000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Четкая тень без размытия */
     position: relative;
-    padding-top: 40px; /* Смещение для заголовка *
+    padding-top: 20px;
+}
+.section p {
+    text-align: justify;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.section h2, h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+img {
+    max-width: 100%; /* Сделает картинку адаптивной */
+    height: 35px;
+    margin: 3px;
 }
